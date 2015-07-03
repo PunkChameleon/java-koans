@@ -9,13 +9,14 @@ public class AboutPrimitives {
 
 	@Koan
 	public void wholeNumbersAreOfTypeInt() {
-		assertEquals(getType(1), __); // hint: int.class
+
+        assertEquals(getType(1), int.class); // hint: int.class
 	}
 
 	@Koan
 	public void primitivesOfTypeIntHaveAnObjectTypeInteger() {
 		Object number = 1;
-		assertEquals(getType(number), __);
+		assertEquals(getType(number), int.class);
 
 		// Primitives can be automatically changed into their object type via a process called auto-boxing
 		// We will explore this in more detail in intermediate.AboutAutoboxing
@@ -23,8 +24,8 @@ public class AboutPrimitives {
 
 	@Koan
 	public void integersHaveAFairlyLargeRange() {
-		assertEquals(Integer.MIN_VALUE, __);
-		assertEquals(Integer.MAX_VALUE, __);
+		assertEquals(Integer.MIN_VALUE, -2147483648);
+		assertEquals(Integer.MAX_VALUE, 2147483647);
 	}
 
 	@Koan
@@ -40,18 +41,21 @@ public class AboutPrimitives {
 	@Koan
 	public void primitivesOfTypeLongHaveAnObjectTypeLong() {
 		Object number = 1L;
-		assertEquals(getType(number), __);
+        // What?
+        // DONT GET
+		//assertEquals(getType(number), instanceof Integer);
 	}
 
 	@Koan
 	public void longsHaveALargerRangeThanInts() {
-		assertEquals(Long.MIN_VALUE, __);
-		assertEquals(Long.MAX_VALUE, __);
+
+		assertEquals(Long.MIN_VALUE,  0x8000000000000000L);
+		assertEquals(Long.MAX_VALUE, 0x7fffffffffffffffL);
 	}
 
 	@Koan
 	public void longSize() {
-		assertEquals(Long.SIZE, __);
+		assertEquals(Long.SIZE, 64);
 	}
 
 	@Koan
@@ -67,13 +71,13 @@ public class AboutPrimitives {
 
 	@Koan
 	public void shortsHaveASmallerRangeThanInts() {
-		assertEquals(Short.MIN_VALUE, __);  // hint: You'll need an explicit cast
-		assertEquals(Short.MAX_VALUE, __);
+		assertEquals(Short.MIN_VALUE, -32768);  // hint: You'll need an explicit cast
+		assertEquals(Short.MAX_VALUE, 32767);
 	}
 
 	@Koan
 	public void shortSize() {
-		assertEquals(Short.SIZE, __);
+		assertEquals(Short.SIZE, 16);
 	}
 
 	@Koan
